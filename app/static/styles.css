@@ -98,7 +98,8 @@ main {
     margin: 15px;
 }
 
-.login-form {
+.login-form,
+.register-form {
     width: 100%;
     max-width: 400px;
     background: #fff;
@@ -108,29 +109,35 @@ main {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.login-form h2 {
+.login-form h2,
+.register-form h2 {
     margin-bottom: 1rem;
     text-align: center;
 }
 
-.login-form form {
+.login-form form,
+.register-form form {
     display: flex;
     flex-direction: column;
 }
 
-.login-form label {
+.login-form label,
+.register-form label {
     margin-bottom: 0.5rem;
 }
 
 .login-form input[type='text'],
-.login-form input[type='password'] {
+.login-form input[type='password'],
+.register-form input[type='text'],
+.register-form input[type='password'] {
     margin-bottom: 1rem;
     padding: 0.5rem;
     border: 1px solid #ddd;
     border-radius: 4px;
 }
 
-.login-form button {
+.login-form button,
+.register-form button {
     padding: 0.5rem;
     background: #5cb85c;
     color: white;
@@ -140,20 +147,24 @@ main {
     cursor: pointer;
 }
 
-.login-form button:hover {
+.login-form button:hover,
+.register-form button:hover {
     background: #4cae4c;
 }
 
-.login-form p {
+.login-form p,
+.register-form p {
     text-align: center;
 }
 
-.login-form a {
+.login-form a,
+.register-form a {
     color: #5cb85c;
     text-decoration: none;
 }
 
-.login-form a:hover {
+.login-form a:hover,
+.register-form a:hover {
     text-decoration: underline;
 }
 
