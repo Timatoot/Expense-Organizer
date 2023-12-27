@@ -5,7 +5,7 @@
     <h2>View Expenses</h2>
     
     <!-- Filter Form -->
-    <form method="GET" action="{{ url_for('view_expenses') }}">
+    <form method="GET" action="{{ url_for('expense.view_expenses') }}">
         <label for="filter_category">Filter by Category:</label>
         <select id="filter_category" name="category_id">
             <option value="">All Categories</option>

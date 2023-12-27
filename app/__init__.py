@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 from .auth.routes import auth_blueprint
 from .expense.routes import expense_blueprint
 from flask_login import LoginManager
@@ -16,6 +16,10 @@ def create_app():
     @login_manager.user_loader
     def load_user(user_id):
         return User.get(user_id)
+
+    @app.route('/')
+    def home():
+        return render_template('home.html')
 
     app.register_blueprint(auth_blueprint)
     app.register_blueprint(expense_blueprint)
