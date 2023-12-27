@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <div class="home-content">
+        <h1>Welcome to Expense Splitter</h1>
+        <p>Manage your shared expenses easily and efficiently.</p>
+        <div class="actions">
+            <a href="{{ url_for('login') }}" class="btn">Login</a>
+            <a href="{{ url_for('register') }}" class="btn">Register</a>
+        </div>
+    </div>
+{% endblock %}

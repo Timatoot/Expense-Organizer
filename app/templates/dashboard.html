@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="dashboard">
+    <h2>Dashboard</h2>
+    <p>Welcome back, {{ current_user.username }}!</p>
+
+    <!-- Display summary of user's expenses -->
+    <div class="expense-summary">
+        <h3>Expense Summary</h3>
+        <!-- Here you can insert a summary of expenses, such as total spent this month, etc. -->
+        <!-- This will require additional logic in the dashboard view function to calculate and pass this data to the template -->
+    </div>
+
+    <!-- Recent Expenses -->
+    <div class="recent-expenses">
+        <h3>Recent Expenses</h3>
+        <ul>
+            {% for expense in recent_expenses %}
+                <li>{{ expense.description }} - ${{ expense.amount }} ({{ expense.created_at }})</li>
+            {% else %}
+                <li>No recent expenses to show.</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <!-- Links or buttons to add/view expenses -->
+    <div class="dashboard-actions">
+        <a href="{{ url_for('add_expense') }}" class="btn">Add New Expense</a>
+        <a href="{{ url_for('view_expenses') }}" class="btn">View Expenses</a>
+    </div>
+</div>
+{% endblock %}

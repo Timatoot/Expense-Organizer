@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="invite-members-form">
+    <h2>Invite Members to Group</h2>
+    <form method="POST" action="{{ url_for('invite_members') }}">
+        <label for="member_email">Member Email:</label>
+        <input type="email" id="member_email" name="member_email" required>
+
+        <button type="submit">Send Invite</button>
+    </form>
+</div>
+{% endblock %}

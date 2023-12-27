@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="expenses-list">
+    <h2>View Expenses</h2>
+    
+    <!-- Filter Form -->
+    <form method="GET" action="{{ url_for('view_expenses') }}">
+        <label for="filter_category">Filter by Category:</label>
+        <select id="filter_category" name="category_id">
+            <option value="">All Categories</option>
+            {% for category in categories %}
+                <option value="{{ category.id }}" {% if current_category_id|string == category.id|string %}selected{% endif %}>{{ category.name }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Filter</button>
+    </form>
+
+    <!-- Expenses List -->
+    <ul>
+        {% for expense in expenses %}
+        <li>{{ expense.description }} - ${{ expense.amount }} - {{ expense.category_name }}</li>
+        <!-- Add more details or options like edit/delete here -->
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
