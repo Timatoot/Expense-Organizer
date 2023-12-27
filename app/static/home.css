@@ -1,0 +1,23 @@
+.home-content {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.home-content h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+}
+
+.home-content p {
+    font-size: 1.2em;
+    margin-bottom: 1em;
+}
+
+.home-content .actions {
+    margin-top: 2em;
+}
+
+.actions a {
+    display: inline-block;
+    margin: 0 10px;
+}

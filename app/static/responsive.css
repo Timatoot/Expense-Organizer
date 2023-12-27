@@ -1,0 +1,10 @@
+@media (max-width: 768px) {
+    .dashboard, .expenses-list {
+        padding: 0.5rem;
+        margin: 1rem;
+    }
+
+    .dashboard-actions, .expenses-list form, .expenses-list ul {
+        text-align: left;
+    }
+}

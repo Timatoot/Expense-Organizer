@@ -1,0 +1,104 @@
+.login-form, 
+.register-form, 
+.add-expense-form, 
+.form-container {
+    width: 100%;
+    max-width: 400px;
+    background: #fff;
+    margin: 2rem auto;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.login-form h2, 
+.register-form h2, 
+.add-expense-form h2,
+.form-container h2 {
+    margin-bottom: 1rem;
+}
+
+.login-form form, 
+.register-form form, 
+.add-expense-form form,
+.form-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-form label, 
+.register-form label, 
+.add-expense-form label,
+.form-container label {
+    margin-bottom: 0.5rem;
+    width: 100%;
+    text-align: left;
+}
+
+.login-form input[type='text'],
+.login-form input[type='password'],
+.register-form input[type='text'],
+.register-form input[type='password'],
+.add-expense-form input[type='number'],
+.add-expense-form input[type='text'],
+.add-expense-form select,
+.form-container input[type='text'],
+.form-container input[type='email'],
+.form-container input[type='number'],
+.form-container select {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    width: 90%;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.login-form button,
+.register-form button,
+.add-expense-form button,
+.form-container button {
+    padding: 0.5rem;
+    background: #5cb85c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    margin-top: 1rem;
+    width: 90%;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.login-form button:hover,
+.register-form button:hover,
+.add-expense-form button:hover,
+.form-container button:hover {
+    background: #4cae4c;
+}
+
+.login-form p,
+.register-form p,
+.add-expense-form p,
+.form-container p {
+    text-align: center;
+}
+
+.login-form a,
+.register-form a,
+.add-expense-form a,
+.form-container a {
+    color: #5cb85c;
+    text-decoration: none;
+}
+
+.login-form a:hover,
+.register-form a:hover,
+.add-expense-form a:hover,
+.form-container a:hover {
+    text-decoration: underline;
+}
+
+.invite-members-form input[type='email'] {
+    margin-bottom: 1rem;
+}

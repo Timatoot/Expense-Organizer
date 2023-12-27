@@ -1,0 +1,92 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+}
+
+.navigation-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+.navigation-bar .home-button a,
+.navigation-bar .user-info span,
+.navigation-bar ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+}
+
+.navigation-bar ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navigation-bar ul li a:hover {
+    background-color: #555;
+}
+
+nav {
+    background-color: #444;
+    overflow: hidden;
+    color: white;
+    padding: 0;
+    text-align: center;
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding-left: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0;
+    padding: 0 10px;
+}
+
+nav ul li a {
+    padding: 15px;
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+}
+
+main {
+    margin: 15px;
+}
+
+.btn {
+    padding: 0.5rem 1rem;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background: #0056b3;
+    text-decoration: none;
+}
