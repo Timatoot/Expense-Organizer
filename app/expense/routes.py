@@ -57,6 +57,39 @@ def view_expenses():
     
     return render_template('view_expenses.html', expenses=expenses, categories=categories, current_category_id=category_id)
 
+@expense_blueprint.route('/edit_expense/<int:expense_id>', methods=['GET', 'POST'])
+@login_required
+def edit_expense(expense_id):
+    conn = get_db_connection()
+    if request.method == 'POST':
+        description = request.form['description']
+        amount = request.form['amount']
+        category_id = request.form.get('category_id')
+        conn.execute('UPDATE expenses SET amount = ?, description = ?, category_id = ? WHERE id = ? AND user_id = ?',
+                     (amount, description, category_id, expense_id, current_user.id))
+        conn.commit()
+        flash('Expense updated successfully!')
+        return redirect(url_for('expense.view_expenses'))
+
+    expense = conn.execute('SELECT * FROM expenses WHERE id = ? AND user_id = ?', (expense_id, current_user.id)).fetchone()
+    categories = conn.execute('SELECT * FROM categories').fetchall()
+    conn.close()
+    
+    if not expense:
+        flash('Expense not found.')
+        return redirect(url_for('expense.view_expenses'))
+    
+    return render_template('edit_expense.html', expense=expense, categories=categories)
+
+@expense_blueprint.route('/delete_expense/<int:expense_id>', methods=['POST'])
+@login_required
+def delete_expense(expense_id):
+    conn = get_db_connection()
+    conn.execute('DELETE FROM expenses WHERE id = ? AND user_id = ?', (expense_id, current_user.id))
+    conn.commit()
+    conn.close()
+    flash('Expense deleted successfully.')
+    return redirect(url_for('expense.view_expenses'))
 
 @expense_blueprint.route('/create_group', methods=['GET', 'POST'])
 @login_required
