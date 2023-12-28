@@ -67,13 +67,11 @@
     align-items: center;
 }
 
-/* Container for Edit and Delete buttons */
 .expenses-list .expense-actions {
     display: flex;
-    align-items: center; /* Vertically center items */
+    align-items: center;
 }
 
-/* Styles for the Edit link */
 .expenses-list .edit-link {
     background-color: #ffc107;
     color: black;
@@ -87,11 +85,10 @@
     background-color: #e0a800;
 }
 
-/* Styles for the form and Delete button */
 .expenses-list form {
-    margin: 0; /* Remove any default margin */
-    display: flex; /* Align form content */
-    align-items: center; /* Vertically center items */
+    margin: 0;
+    display: flex;
+    align-items: center;
 }
 
 .expenses-list .delete-button {

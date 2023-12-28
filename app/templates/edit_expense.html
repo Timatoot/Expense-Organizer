@@ -5,7 +5,7 @@
     <h2>Edit Expense</h2>
     <form method="POST" action="{{ url_for('expense.edit_expense', expense_id=expense.id) }}">
         <label for="amount">Amount:</label>
-        <input type="number" id="amount" name="amount" value="{{ expense.amount }}" required>
+        <input type="number" id="amount" name="amount" value="{{ expense.amount }}" min="0" required>
 
         <label for="description">Description:</label>
         <input type="text" id="description" name="description" value="{{ expense.description }}">

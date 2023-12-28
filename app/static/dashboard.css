@@ -1,5 +1,5 @@
-.dashboard {
-    max-width: 800px;
+.dashboard-container {
+    max-width: 1200px;
     margin: 2rem auto;
     padding: 1rem;
     background: #fff;
@@ -7,30 +7,46 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.dashboard h2 {
-    color: #333;
-    text-align: center;
-    margin-bottom: 1rem;
+.dashboard-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
 }
 
-.dashboard p {
+.dashboard-header > h2,
+.dashboard-header > p {
+    margin: 0;
     text-align: center;
-    color: #666;
+}
+
+.dashboard-content {
+    display: flex;
+    justify-content: space-between;
     margin-bottom: 2rem;
 }
 
 .expense-summary,
-.recent-expenses {
-    margin-bottom: 2rem;
+.pie-chart {
+    flex: 1;
+    margin-right: 1rem;
 }
 
 .expense-summary h3,
-.recent-expenses h3 {
+.recent-expenses h3,
+.pie-chart h3 {
     border-bottom: 1px solid #eee;
     padding-bottom: 0.5rem;
     margin-bottom: 1rem;
-    color: #5cb85c;
+    color: #007bff;
     font-weight: normal;
+}
+
+.pie-chart img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto; /* Center the image within the div */
 }
 
 .recent-expenses ul {
@@ -59,8 +75,24 @@
     text-decoration: none;
     border-radius: 4px;
     transition: background-color 0.3s ease;
+    display: inline-block;
+    margin-right: 10px;
 }
 
 .dashboard-actions .btn:hover {
     background: #0056b3;
+}
+
+.positive { color: red; }
+.negative { color: green; }
+
+@media (max-width: 768px) {
+    .dashboard-content {
+        flex-direction: column;
+    }
+
+    .expense-summary,
+    .pie-chart {
+        margin-right: 0;
+    }
 }

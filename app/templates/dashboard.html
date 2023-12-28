@@ -1,14 +1,28 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-<div class="dashboard">
-    <h2>Dashboard</h2>
-    <p>Welcome back, {{ current_user.username }}!</p>
+<div class="dashboard-container">
+    <div class="dashboard-header">
+        <h2>Dashboard</h2>
+        <p>Welcome back, {{ current_user.username }}!</p>
+    </div>
 
-    <div class="expense-summary">
-        <h3>Expense Summary</h3>
-        <!-- Here you can insert a summary of expenses, such as total spent this month, etc. -->
-        <!-- This will require additional logic in the dashboard view function to calculate and pass this data to the template -->
+    <div class="dashboard-content">
+        <div class="expense-summary">
+            <h3>Expense Summary</h3>
+            <p>Amount spent this month: ${{ current_month_expenses | default('0', true) }}</p>
+            <p>Amount spent compared to last month: 
+                <span class="{{ 'negative' if month_difference < 0 else 'positive' }}">
+                    {{ '+' if month_difference > 0 else '-' }}{{ month_difference | abs }}
+                </span>
+            </p>
+            <p>Average spent over the last 12 months: ${{ average_12_months_expenses | default('0', true) }}</p>
+        </div>
+
+        <div class="pie-chart">
+            <h3>Current Month's Expense Distribution</h3>
+            <img src="data:image/png;base64,{{ pie_image }}" alt="Pie chart of expenses">    
+        </div>
     </div>
 
     <div class="recent-expenses">
