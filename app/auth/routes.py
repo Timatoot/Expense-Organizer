@@ -43,5 +43,5 @@ def register():
             conn.execute('INSERT INTO users (username, password) VALUES (?, ?)', (username, generate_password_hash(password)))
             conn.commit()
             conn.close()
-            return redirect(url_for('login'))
+            return redirect(url_for('auth.login'))
     return render_template('register.html')
