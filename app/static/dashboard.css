@@ -46,7 +46,7 @@
     display: block;
     max-width: 100%;
     height: auto;
-    margin: 0 auto; /* Center the image within the div */
+    margin: 0 auto;
 }
 
 .recent-expenses ul {
